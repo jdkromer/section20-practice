@@ -21,7 +21,7 @@ const QuoteDetails = () => {
             <HighlightedQuote text={quote.text} author={quote.author} />
             <Route path={`/quotes/${params.quoteID}`} exact>
                 <div className='centered'>
-                    <Link className='btn--flat' to={`quotes/${params.quoteID}/comments`}>Load Comments</Link>
+                    <Link className='btn--flat' to={`/quotes/${params.quoteID}/comments`}>Load Comments</Link>
                 </div>
             </Route>
             <Route path={`/quotes/${params.quoteID}/comments`}>
