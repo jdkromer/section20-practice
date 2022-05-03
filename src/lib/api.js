@@ -22,8 +22,8 @@ export async function getAllQuotes() {
   return transformedQuotes;
 }
 
-export async function getSingleQuote(quoteId) {
-  const response = await fetch(`${FIREBASE_DOMAIN}/quotes/${quoteId}.json`);
+export async function getSingleQuote(quoteID) {
+  const response = await fetch(`${FIREBASE_DOMAIN}/quotes/${quoteID}.json`);
   const data = await response.json();
 
   if (!response.ok) {
@@ -31,7 +31,7 @@ export async function getSingleQuote(quoteId) {
   }
 
   const loadedQuote = {
-    id: quoteId,
+    id: quoteID,
     ...data,
   };
 
@@ -56,7 +56,7 @@ export async function addQuote(quoteData) {
 }
 
 export async function addComment(requestData) {
-  const response = await fetch(`${FIREBASE_DOMAIN}/comments/${requestData.quoteId}.json`, {
+  const response = await fetch(`${FIREBASE_DOMAIN}/comments/${requestData.quoteID}.json`, {
     method: 'POST',
     body: JSON.stringify(requestData.commentData),
     headers: {
@@ -72,8 +72,8 @@ export async function addComment(requestData) {
   return { commentId: data.name };
 }
 
-export async function getAllComments(quoteId) {
-  const response = await fetch(`${FIREBASE_DOMAIN}/comments/${quoteId}.json`);
+export async function getAllComments(quoteID) {
+  const response = await fetch(`${FIREBASE_DOMAIN}/comments/${quoteID}.json`);
 
   const data = await response.json();
 
