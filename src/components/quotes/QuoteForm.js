@@ -1,5 +1,5 @@
 import { useRef, useState, Fragment } from 'react';
-import { Prompt } from 'react-router-dom'
+// import { Prompt } from 'react-router-dom'
 
 import Card from '../ui/Card';
 import LoadingSpinner from '../ui/LoadingSpinner';
@@ -33,10 +33,11 @@ const QuoteForm = (props) => {
 
   return (
     <Fragment>
-      <Prompt 
+      {/* Prompt is currently not supported yet by v6 */}
+      {/*<Prompt 
         when={isEntered}
         message={(location) => 'Are you sure you want to leave? All you data will be lost!'} 
-      />
+  />*/} 
       <Card>
         <form onFocus={formFocusHandler} className={classes.form} onSubmit={submitFormHandler}>
           {props.isLoading && (
